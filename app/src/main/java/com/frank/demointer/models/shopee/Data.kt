@@ -1,13 +1,10 @@
-package com.frank.demointer.models
+package com.frank.demointer.models.shopee
 
 import com.google.gson.annotations.SerializedName
 
-
-data class Data (
-
-  @SerializedName("tabs"       ) var tabs      : String?          = null,
-  @SerializedName("feeds"      ) var feeds     : ArrayList<Feeds> = arrayListOf(),
-  @SerializedName("feed_total" ) var feedTotal : Int?             = null,
-  @SerializedName("toggle"     ) var toggle    : Toggle?          = Toggle()
-
+data class Data(
+    @SerializedName("tabs") var tabs: String? = null,
+    @SerializedName("feeds") var feeds: ArrayList<Feeds> = arrayListOf(),
+    @SerializedName("feed_total") var feedTotal: Int? = null,
+    @SerializedName("toggle") var toggle: Toggle? = Toggle()
 )

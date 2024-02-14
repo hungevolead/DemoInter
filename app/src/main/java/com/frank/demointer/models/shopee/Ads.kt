@@ -1,90 +1,94 @@
-package com.frank.demointer.models
+package com.frank.demointer.models.shopee
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Ads(
+class Ads() : Parcelable {
     @SerializedName("itemid")
-    var itemid: Int? = null,
-    @SerializedName("shopid") var shopid: Int? = null,
-    @SerializedName("name") var name: String? = null,
-    @SerializedName("label_ids") var labelIds: ArrayList<Int> = arrayListOf(),
-    @SerializedName("image") var image: String? = null,
-    @SerializedName("images") var images: ArrayList<String> = arrayListOf(),
-    @SerializedName("stock") var stock: Int? = null,
-    @SerializedName("sold") var sold: Int? = null,
-    @SerializedName("historical_sold") var historicalSold: Int? = null,
-    @SerializedName("liked_count") var likedCount: Int? = null,
-    @SerializedName("catid") var catid: Int? = null,
-    @SerializedName("price") var price: Int? = null,
-    @SerializedName("price_min") var priceMin: Int? = null,
-    @SerializedName("hidden_price_display") var hiddenPriceDisplay: String? = null,
-    @SerializedName("show_discount") var showDiscount: Int? = null,
-    @SerializedName("raw_discount") var rawDiscount: Int? = null,
-    @SerializedName("discount") var discount: String? = null,
-    @SerializedName("video_info_list") var videoInfoList: String? = null,
-    @SerializedName("item_rating") var itemRating: ItemRating? = ItemRating(),
-    @SerializedName("item_type") var itemType: Int? = null,
-    @SerializedName("reference_item_id") var referenceItemId: String? = null,
-    @SerializedName("is_adult") var isAdult: Boolean? = null,
-    @SerializedName("badge_icon_type") var badgeIconType: Int? = null,
-    @SerializedName("shopee_verified") var shopeeVerified: Boolean? = null,
-    @SerializedName("is_official_shop") var isOfficialShop: Boolean? = null,
-    @SerializedName("show_free_shipping") var showFreeShipping: Boolean? = null,
-    @SerializedName("exclusive_price_info") var exclusivePriceInfo: String? = null,
-    @SerializedName("is_group_buy_item") var isGroupBuyItem: String? = null,
-    @SerializedName("welcome_package_info") var welcomePackageInfo: String? = null,
-    @SerializedName("add_on_deal_info") var addOnDealInfo: String? = null,
-    @SerializedName("is_preferred_plus_seller") var isPreferredPlusSeller: Boolean? = null,
-    @SerializedName("shop_location") var shopLocation: String? = null,
-    @SerializedName("voucher_info") var voucherInfo: VoucherInfo? = VoucherInfo(),
-    @SerializedName("is_on_flash_sale") var isOnFlashSale: Boolean? = null,
-    @SerializedName("spl_installment_tenure") var splInstallmentTenure: String? = null,
-    @SerializedName("is_live_streaming_price") var isLiveStreamingPrice: String? = null,
-    @SerializedName("shop_name") var shopName: String? = null,
-    @SerializedName("is_mart") var isMart: Boolean? = null,
-    @SerializedName("autogen_title") var autogenTitle: String? = null,
-    @SerializedName("autogen_title_id") var autogenTitleId: String? = null,
-    @SerializedName("is_service_by_shopee") var isServiceByShopee: Boolean? = null,
-    @SerializedName("overlay_image_index") var overlayImageIndex: String? = null,
-    @SerializedName("overlay_images") var overlayImages: String? = null,
-    @SerializedName("flash_sale_stock") var flashSaleStock: Int? = null,
-    @SerializedName("global_sold_count") var globalSoldCount: Int? = null,
-    @SerializedName("display_sold_count_source") var displaySoldCountSource: Int? = null,
-    @SerializedName("free_shipping_info") var freeShippingInfo: String? = null,
-    @SerializedName("item_card_display_price") var itemCardDisplayPrice: ItemCardDisplayPrice? = ItemCardDisplayPrice(),
-    @SerializedName("item_card_display_label") var itemCardDisplayLabel: String? = null,
-    @SerializedName("adult_age_threshold") var adultAgeThreshold: String? = null,
-    @SerializedName("need_kyc") var needKyc: Boolean? = null,
-    @SerializedName("adult_types") var adultTypes: String? = null,
-    @SerializedName("info") var info: String? = null,
-    @SerializedName("data_type") var dataType: String? = null,
-    @SerializedName("key") var key: String? = null,
-    @SerializedName("count") var count: Int? = null,
-    @SerializedName("adsid") var adsid: Int? = null,
-    @SerializedName("campaignid") var campaignid: Int? = null,
-    @SerializedName("deduction_info") var deductionInfo: String? = null,
-    @SerializedName("deep_discount_skin") var deepDiscountSkin: String? = null,
-    @SerializedName("experiment_info") var experimentInfo: ExperimentInfo? = ExperimentInfo(),
-    @SerializedName("relationship_label") var relationshipLabel: String? = null,
-    @SerializedName("live_stream_session") var liveStreamSession: LiveStreamSession? = LiveStreamSession(),
-    @SerializedName("new_user_label") var newUserLabel: String? = null,
-    @SerializedName("wp_eligibility") var wpEligibility: String? = null,
-    @SerializedName("platform_voucher") var platformVoucher: String? = null,
-    @SerializedName("highlight_video") var highlightVideo: String? = null,
-    @SerializedName("search_id") var searchId: String? = null,
-    @SerializedName("can_use_cod") var canUseCod: Boolean? = null,
-    @SerializedName("pub_id") var pubId: String? = null,
-    @SerializedName("pub_context_id") var pubContextId: String? = null,
-    @SerializedName("friend_relationship_label") var friendRelationshipLabel: String? = null,
-    @SerializedName("product_banners") var productBanners: String? = null,
-    @SerializedName("top_product_label") var topProductLabel: String? = null,
-    @SerializedName("flash_sale_info") var flashSaleInfo: String? = null,
-    @SerializedName("redirect_info") var redirectInfo: String? = null,
-    @SerializedName("redirect_type") var redirectType: String? = null,
-    @SerializedName("customized_overlay_type") var customizedOverlayType: String? = null,
-    @SerializedName("customized_overlay_info") var customizedOverlayInfo: String? = null,
-    @SerializedName("main_displaying_type") var mainDisplayingType: String? = null,
-    @SerializedName("video_info") var videoInfo: String? = null,
-    @SerializedName("use_backend_discount_text") var useBackendDiscountText: Boolean? = null
+    var itemid: Long? = null
 
-)
+    @SerializedName("shopid")
+    var shopid: Int? = null
+
+    @SerializedName("name")
+    var name: String? = null
+
+    @SerializedName("label_ids")
+    var labelIds: ArrayList<Long> = arrayListOf()
+
+    @SerializedName("image")
+    var image: String? = null
+
+    @SerializedName("images")
+    var images: ArrayList<String> = arrayListOf()
+
+    @SerializedName("stock")
+    var stock: Int? = null
+
+    @SerializedName("sold")
+    var sold: Int? = null
+
+    @SerializedName("historical_sold")
+    var historicalSold: Int? = null
+
+    @SerializedName("liked_count")
+    var likedCount: Int? = null
+
+    @SerializedName("price")
+    var price: Long? = null
+
+    //@SerializedName("video_info_list") var videoInfoList: String? = null
+    @SerializedName("item_rating")
+    var itemRating: ItemRating? = ItemRating()
+
+    @SerializedName("item_type")
+    var itemType: Int? = null
+
+    @SerializedName("reference_item_id")
+    var referenceItemId: String? = null
+
+    constructor(parcel: Parcel) : this() {
+        itemid = parcel.readValue(Long::class.java.classLoader) as? Long
+        shopid = parcel.readValue(Int::class.java.classLoader) as? Int
+        name = parcel.readString()
+        image = parcel.readString()
+        images = parcel.createStringArrayList() ?: arrayListOf()
+        stock = parcel.readValue(Int::class.java.classLoader) as? Int
+        sold = parcel.readValue(Int::class.java.classLoader) as? Int
+        historicalSold = parcel.readValue(Int::class.java.classLoader) as? Int
+        likedCount = parcel.readValue(Int::class.java.classLoader) as? Int
+        price = parcel.readValue(Long::class.java.classLoader) as? Long
+        itemType = parcel.readValue(Int::class.java.classLoader) as? Int
+        referenceItemId = parcel.readString()
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeValue(itemid)
+        parcel.writeValue(shopid)
+        parcel.writeString(name)
+        parcel.writeString(image)
+        parcel.writeStringList(images)
+        parcel.writeValue(stock)
+        parcel.writeValue(sold)
+        parcel.writeValue(historicalSold)
+        parcel.writeValue(likedCount)
+        parcel.writeValue(price)
+        parcel.writeValue(itemType)
+        parcel.writeString(referenceItemId)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Ads> {
+        override fun createFromParcel(parcel: Parcel): Ads {
+            return Ads(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Ads?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

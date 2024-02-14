@@ -1,12 +1,9 @@
-package com.frank.demointer.models
+package com.frank.demointer.models.shopee
 
 import com.google.gson.annotations.SerializedName
 
-
-data class LiveStreamSession (
-
-  @SerializedName("shop_is_live" ) var shopIsLive : Boolean? = null,
-  @SerializedName("session_id"   ) var sessionId  : String?  = null,
-  @SerializedName("view_cnt"     ) var viewCnt    : String?  = null
-
+data class LiveStreamSession(
+    @SerializedName("shop_is_live") var shopIsLive: Boolean? = null,
+    @SerializedName("session_id") var sessionId: String? = null,
+    @SerializedName("view_cnt") var viewCnt: String? = null
 )

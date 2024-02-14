@@ -15,7 +15,7 @@
         android:theme="@style/Theme.DemoInter"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".lazada.LazadaListActivity"/>
-        <activity android:name=".shopee.ShopeeListActivity"/>
-        <activity android:name=".tiktok.TiktokListActivity"/>
+        <activity android:name=".ui.lazada.LazadaListActivity"/>
+        <activity android:name=".ui.shopee.ShopeeListActivity"/>
+        <activity android:name=".ui.tiktok.TiktokListActivity"/>
+        <activity android:name=".ui.shopee.ShopeeDetailActivity"/>
     </application>
 
 </manifest>

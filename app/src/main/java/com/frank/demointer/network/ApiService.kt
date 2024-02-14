@@ -1,7 +1,7 @@
 package com.frank.demointer.network
 
 import com.frank.demointer.models.BaseResponse
-import com.frank.demointer.models.ShopeesResponse
+import com.frank.demointer.models.shopee.Data
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -34,5 +34,5 @@ interface ApiService {
         @Query("need_tab") needTab: Boolean = false,
         @Query("offset") offset: Int = 0,
         @Query("view_session_id") viewSessionId: String = "2051404c-b801-408a-9446-1f89874593b9",
-    ): Call<BaseResponse<ShopeesResponse>>
+    ): Call<BaseResponse<Data>>
 }

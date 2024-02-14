@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DemoInter</string>
+    <string name="format_photo_position" translatable="false">%d/%d</string>
 </resources>

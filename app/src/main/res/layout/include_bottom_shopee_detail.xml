@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btnAddCart"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_to_cart"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBuyNow"
+        app:layout_constraintBottom_toBottomOf="@id/btnBuyNow"
+        app:layout_constraintEnd_toStartOf="@id/btnBuyNow"/>
+
+    <Button
+        android:id="@+id/btnBuyNow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EE4D2D"
+        app:backgroundTint="#EE4D2D"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:text="Buy Now\nd0,00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAddCart"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
