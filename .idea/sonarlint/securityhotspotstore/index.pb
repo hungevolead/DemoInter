@@ -1,8 +1,6 @@
 
 l
 <app/src/main/java/com/frank/demointer/models/BaseResponse.kt,c/8/c88249bec3997eab09a5243c84dcc2e89bb7bf73
-j
-:app/src/main/java/com/frank/demointer/network/ApiClient.kt,2/1/21364542db591340cf2b522628ffd76b27128c46
 t
 Dapp/src/main/java/com/frank/demointer/models/shopee/VideoInfoList.kt,d/8/d8fdc70f0e8ffd8ef1058bad196bc64a32b48956
 m
@@ -31,8 +29,6 @@ k
 ;app/src/main/java/com/frank/demointer/models/shopee/Data.kt,d/2/d2b1954d4e377f87903eee997b862f2722b3dc74
 l
 <app/src/main/java/com/frank/demointer/models/shopee/Feeds.kt,0/5/05d1f82c015074d4f067e9f9d0d5b4e7dba507fe
-k
-;app/src/main/java/com/frank/demointer/network/ApiService.kt,4/1/414c4205de7687a55df23678c2cdc9dfb0e19e99
 q
 Aapp/src/main/java/com/frank/demointer/models/shopee/ItemRating.kt,5/c/5c9613ef189a40613571e978c936286d7b9bd092
 r

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.frank.demointer.databinding.ItemShopeeBinding
 import com.frank.demointer.models.shopee.Feeds
+import com.frank.demointer.utils.priceFormatter
 import java.text.DecimalFormat
 import java.text.NumberFormat
 
@@ -87,14 +88,6 @@ class ShopeeAdapter(private var listShopee: MutableList<Feeds>) :
             binding.clItemShopee.setOnClickListener {
                 ShopeeDetailActivity.startActivity(context, itemType, shopeeDetail)
             }
-        }
-
-        private fun priceFormatter(price: Long?): String {
-            if (price == null) {
-                return "0"
-            }
-            val formatter: NumberFormat = DecimalFormat("#,###")
-            return formatter.format(price / 10000)
         }
     }
 }

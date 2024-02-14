@@ -17,6 +17,7 @@ import com.frank.demointer.databinding.ActivityShopeeDetailBinding
 import com.frank.demointer.models.shopee.Ads
 import com.frank.demointer.models.shopee.Item
 import com.frank.demointer.utils.DisplayUtils
+import com.frank.demointer.utils.priceFormatter
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import java.io.Serializable
 
@@ -61,10 +62,10 @@ class ShopeeDetailActivity : AppCompatActivity() {
         showPhotos()
 
         if (itemType == "ads_item_card") {
-            bindDataToView(ads?.name ?: "")
+            bindDataToView(ads?.name ?: "", ads?.price ?: 0)
         }
         if (itemType == "item_card") {
-            bindDataToView(item?.name ?: "")
+            bindDataToView(item?.name ?: "", item?.price ?: 0)
         }
     }
 
@@ -127,8 +128,10 @@ class ShopeeDetailActivity : AppCompatActivity() {
         })
     }
 
-    private fun bindDataToView(title: String) {
+    private fun bindDataToView(title: String, price: Long) {
         binding.body.tvTitle.text = title
+        binding.body.tvPrice.text = "Price: đ${priceFormatter(price)}"
+        binding.bottom.btnBuyNow.text = "Buy Now\nđ${priceFormatter(price)}"
     }
 
     companion object {
