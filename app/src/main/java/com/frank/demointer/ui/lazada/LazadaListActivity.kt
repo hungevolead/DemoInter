@@ -9,6 +9,7 @@ import com.frank.demointer.common.ItemOffsetDecoration
 import com.frank.demointer.databinding.ActivityLazadaListBinding
 import com.frank.demointer.models.BaseResponse
 import com.frank.demointer.models.lazada.LazadaData
+import com.frank.demointer.models.lazada_list.LazadaListData
 import com.frank.demointer.models.shopee.Data
 import com.frank.demointer.network.ApiClient
 import com.frank.demointer.network.ApiLazadaClient
@@ -55,18 +56,19 @@ class LazadaListActivity : AppCompatActivity() {
     }
 
     private fun getInitData() {
-        val call = ApiLazadaClient.apiService.getDetailLazada()
-        call.enqueue(object: Callback<BaseResponse<LazadaData>> {
+        val call = ApiLazadaClient.apiService.getListLazada()
+        call.enqueue(object: Callback<BaseResponse<LazadaListData>> {
             override fun onResponse(
-                call: Call<BaseResponse<LazadaData>>,
-                response: Response<BaseResponse<LazadaData>>
+                call: Call<BaseResponse<LazadaListData>>,
+                response: Response<BaseResponse<LazadaListData>>
             ) {
                 if (response.isSuccessful) {
                     val spr = response.body()
                     // Success
-                    Log.d("FrankAA", "Call api success size: ${spr?.data?.module1?.products?.size}")
-                    if (spr?.data != null && !spr.data.module1?.products.isNullOrEmpty()) {
-                        lazadaApdater.setData(spr.data.module1?.products ?: mutableListOf())
+                    Log.d("FrankAA", "Call api success size: ${spr?.data}")
+                    val items = spr?.data?.resultValue?.icmsZebra?.data
+                    if (!items.isNullOrEmpty()) {
+                        lazadaApdater.setData(items)
                     }
                 } else {
                     // Error
@@ -74,7 +76,7 @@ class LazadaListActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<BaseResponse<LazadaData>>, t: Throwable) {
+            override fun onFailure(call: Call<BaseResponse<LazadaListData>>, t: Throwable) {
                 // Fail
                 Log.d("FrankAA", "Call api fail: ${t.message}")
             }

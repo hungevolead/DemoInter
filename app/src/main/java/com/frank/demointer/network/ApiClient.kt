@@ -28,7 +28,7 @@ object ApiClient {
 }
 
 object RetrofitLazadaClient {
-    private const val BASE_URL = "https://pdpdesc-m.lazada.vn"
+    private const val BASE_URL = "https://acs-m.lazada.vn"
 
     val retrofit: Retrofit by lazy {
         val interceptor = HttpLoggingInterceptor().apply {

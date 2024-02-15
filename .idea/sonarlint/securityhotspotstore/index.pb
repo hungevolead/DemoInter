@@ -1,6 +1,4 @@
 
-l
-<app/src/main/java/com/frank/demointer/models/BaseResponse.kt,c/8/c88249bec3997eab09a5243c84dcc2e89bb7bf73
 t
 Dapp/src/main/java/com/frank/demointer/models/shopee/VideoInfoList.kt,d/8/d8fdc70f0e8ffd8ef1058bad196bc64a32b48956
 m
@@ -35,3 +33,29 @@ r
 Bapp/src/main/java/com/frank/demointer/models/shopee/VoucherInfo.kt,e/b/ebda37159df04d7bbe7e6b825f580b38ee792743
 r
 Bapp/src/main/java/com/frank/demointer/models/shopee/AdsItemCard.kt,2/f/2f9fd1f958419008b9feef1a4d2ed4360298592e
+h
+8app/src/main/java/com/frank/demointer/ui/MainActivity.kt,f/9/f9552f1c0e2a3dfb0aa611310ca67f193fa2fce2
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+o
+?app/src/main/java/com/frank/demointer/models/shopee/ItemCard.kt,f/7/f7d79f22dc0aa59aa1ce9d22ac528288c15a5937
+k
+;app/src/main/java/com/frank/demointer/models/shopee/Item.kt,3/7/378a62cc2b1e9fcbd9ddaa18ff7aafb9e03afb3d
+u
+Eapp/src/main/java/com/frank/demointer/models/shopee/ShopeeItemType.kt,2/5/259aeaab126c804000749dd08888b930ad463fec
+k
+;app/src/main/java/com/frank/demointer/utils/DisplayUtils.kt,b/5/b5eb559c34c75af9ffc73bb3732d4fa603fcad74
+u
+Eapp/src/main/java/com/frank/demointer/ui/shopee/PhotosSlideAdapter.kt,4/4/4401c990a84919f25d531f4beb4c073384d0071b
+h
+8app/src/main/java/com/frank/demointer/utils/Formatter.kt,a/c/acb03bb09000c6caccf26a6c91ba0f321d14b60b
+w
+Gapp/src/main/java/com/frank/demointer/ui/shopee/ShopeeDetailActivity.kt,b/7/b7433252f4f398095494bbb2741af6ae35b54680
+j
+:app/src/main/java/com/frank/demointer/models/shopee/Ads.kt,f/2/f2bad27ac3c7edb6c1aa1e0a9a5efbe66794097e
+n
+>app/src/main/java/com/frank/demointer/models/lazada/Module1.kt,4/0/4045911b3d5e7b9bed9433236d097e740872a770
+q
+Aapp/src/main/java/com/frank/demointer/models/lazada/LazadaData.kt,f/6/f6f6898a65c4fd9a27da4775c27730d992a64f80
+o
+?app/src/main/java/com/frank/demointer/models/lazada/Products.kt,b/9/b988a45674c3e091aaca4e01669928b1bd118759

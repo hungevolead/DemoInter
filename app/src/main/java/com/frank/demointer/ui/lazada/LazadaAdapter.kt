@@ -10,11 +10,12 @@ import com.bumptech.glide.Glide
 import com.frank.demointer.databinding.ItemLazadaBinding
 import com.frank.demointer.databinding.ItemShopeeBinding
 import com.frank.demointer.models.lazada.Products
+import com.frank.demointer.models.lazada_list.LazadaItem
 import com.frank.demointer.models.shopee.Feeds
 import com.frank.demointer.ui.shopee.ShopeeDetailActivity
 import com.frank.demointer.utils.priceFormatter
 
-class LazadaAdapter(private var listLazada: MutableList<Products>) :
+class LazadaAdapter(private var listLazada: MutableList<LazadaItem>) :
     RecyclerView.Adapter<LazadaAdapter.ViewHolder>() {
     private lateinit var context: Context
 
@@ -25,13 +26,13 @@ class LazadaAdapter(private var listLazada: MutableList<Products>) :
         return ViewHolder(itemBinding)
     }
 
-    fun setData(listLazada: List<Products>) {
+    fun setData(listLazada: List<LazadaItem>) {
         this.listLazada.clear()
         this.listLazada.addAll(listLazada)
         notifyDataSetChanged()
     }
 
-    fun addData(listLazada: List<Products>) {
+    fun addData(listLazada: List<LazadaItem>) {
         this.listLazada.addAll(listLazada)
         notifyDataSetChanged()
     }
@@ -44,7 +45,7 @@ class LazadaAdapter(private var listLazada: MutableList<Products>) :
 
     inner class ViewHolder(private val binding: ItemLazadaBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(products: Products) {
+        fun bind(lazadaItem: LazadaItem) {
         }
 
         private fun bindDataToView(
