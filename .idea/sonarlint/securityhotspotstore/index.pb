@@ -49,13 +49,9 @@ u
 Eapp/src/main/java/com/frank/demointer/ui/shopee/PhotosSlideAdapter.kt,4/4/4401c990a84919f25d531f4beb4c073384d0071b
 h
 8app/src/main/java/com/frank/demointer/utils/Formatter.kt,a/c/acb03bb09000c6caccf26a6c91ba0f321d14b60b
-w
-Gapp/src/main/java/com/frank/demointer/ui/shopee/ShopeeDetailActivity.kt,b/7/b7433252f4f398095494bbb2741af6ae35b54680
 j
 :app/src/main/java/com/frank/demointer/models/shopee/Ads.kt,f/2/f2bad27ac3c7edb6c1aa1e0a9a5efbe66794097e
 n
 >app/src/main/java/com/frank/demointer/models/lazada/Module1.kt,4/0/4045911b3d5e7b9bed9433236d097e740872a770
-q
-Aapp/src/main/java/com/frank/demointer/models/lazada/LazadaData.kt,f/6/f6f6898a65c4fd9a27da4775c27730d992a64f80
 o
 ?app/src/main/java/com/frank/demointer/models/lazada/Products.kt,b/9/b988a45674c3e091aaca4e01669928b1bd118759

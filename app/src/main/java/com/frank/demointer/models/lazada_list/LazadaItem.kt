@@ -8,7 +8,9 @@ data class LazadaItem (
     @SerializedName("currency")
     var currency: String,
     @SerializedName("shopId")
-    var shopId: Int,
+    var shopId: Long,
+    @SerializedName("itemId")
+    var itemId: Long,
     @SerializedName("itemImg")
     var itemImg: String?,
     @SerializedName("itemTitle")

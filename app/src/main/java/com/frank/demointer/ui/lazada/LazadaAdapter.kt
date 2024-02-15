@@ -1,19 +1,12 @@
 package com.frank.demointer.ui.lazada
 
 import android.content.Context
-import android.os.Parcelable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.frank.demointer.databinding.ItemLazadaBinding
-import com.frank.demointer.databinding.ItemShopeeBinding
-import com.frank.demointer.models.lazada.Products
 import com.frank.demointer.models.lazada_list.LazadaItem
-import com.frank.demointer.models.shopee.Feeds
-import com.frank.demointer.ui.shopee.ShopeeDetailActivity
-import com.frank.demointer.utils.priceFormatter
 
 class LazadaAdapter(private var listLazada: MutableList<LazadaItem>) :
     RecyclerView.Adapter<LazadaAdapter.ViewHolder>() {
@@ -46,23 +39,12 @@ class LazadaAdapter(private var listLazada: MutableList<LazadaItem>) :
     inner class ViewHolder(private val binding: ItemLazadaBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(lazadaItem: LazadaItem) {
-        }
-
-        private fun bindDataToView(
-            shopeeDetail: Parcelable,
-            itemType: String,
-            imageUrl: String,
-            name: String,
-            price: Long,
-            quantitySold: Int
-        ) {
-            val imgUrl = "https://down-vn.img.susercontent.com/file/$imageUrl"
-            Glide.with(context).load(imgUrl).into(binding.ivCover)
-            binding.tvProductName.text = name
-            binding.tvPrice.text = "đ${priceFormatter(price)}"
-            binding.tvQuantitySold.text = "Has sold ${quantitySold}"
+            Glide.with(context).load(lazadaItem.itemImg).into(binding.ivCover)
+            binding.tvProductName.text = lazadaItem.itemTitle
+            binding.tvPrice.text = "đ${lazadaItem.itemPrice}"
+            binding.tvQuantitySold.text = "Discount ${lazadaItem.itemDiscount}"
             binding.clItemLazada.setOnClickListener {
-                ShopeeDetailActivity.startActivity(context, itemType, shopeeDetail)
+                LazadaDetailActivity.startActivity(context, lazadaItem.shopId, lazadaItem.itemId)
             }
         }
     }

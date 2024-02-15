@@ -31,21 +31,12 @@ object RetrofitLazadaClient {
     private const val BASE_URL = "https://acs-m.lazada.vn"
 
     val retrofit: Retrofit by lazy {
-        val interceptor = HttpLoggingInterceptor().apply {
-            this.level = HttpLoggingInterceptor.Level.BODY
-        }
         val client = OkHttpClient.Builder().apply {
             this.addInterceptor(RetrofitCurlPrinterInterceptor(object: Logger {
                 override fun log(message: String) {
-                    //info { message }
                     Log.d("FrankAA", "Curl: $message")
                 }
             }))
-                // time out setting
-                //.connectTimeout(3,TimeUnit.SECONDS)
-                //.readTimeout(20,TimeUnit.SECONDS)
-                //.writeTimeout(25,TimeUnit.SECONDS)
-
         }.build()
 
         val gson = GsonBuilder()

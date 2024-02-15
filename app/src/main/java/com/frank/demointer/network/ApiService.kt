@@ -58,24 +58,8 @@ interface ApiLazadaService {
         "sec-fetch-site: same-site",
         "user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko)",
     )
-    @GET("/h5/mtop.lazada.homepage.service/1.0/")
+    @GET("https://acs-m.lazada.vn/h5/mtop.lazada.homepage.service/1.0/?jsv=2.7.2&appKey=24677475&t=1707962404365&sign=901239d341436b941ea279d4df7b15ed&api=mtop.lazada.homepage.service&v=1.0&type=originaljson&isSec=1&AntiCreep=true&timeout=20000&dataType=json&sessionOption=AutoLoginOnly&x-i18n-language=vi&x-i18n-regionID=VN&isIcmsMtop=true&data=%7B%22regionID%22%3A%22VN%22%2C%22language%22%3A%22vi%22%2C%22platform%22%3A%22pc%22%2C%22isbackup%22%3A%22true%22%2C%22voyagerVersion%22%3A%222%22%2C%22terminalType%22%3A1%2C%22backupParams%22%3A%22language%2CregionID%2Cplatform%2CpageNo%22%2C%22anonUID%22%3A%22WM0KqM1JXym7I4gWj4sgXJ9wKVFpz94V%22%2C%22pageNo%22%3A0%2C%22appId%22%3A%22icms-zebra-5000357-2586207%22%7D")
     fun getListLazada(
-        @Query("jsv") jsv: String = "2.7.2",
-        @Query("appKey") appKey: Int = 24677475,
-        @Query("t") t: Long = 1707962404365,
-        @Query("sign") sign: String = "901239d341436b941ea279d4df7b15ed",
-        @Query("api") api: String = "mtop.lazada.homepage.service",
-        @Query("v") v: String = "1.0",
-        @Query("type") type: String = "originaljson",
-        @Query("isSec") isSec: Int = 1,
-        @Query("AntiCreep") antiCreep: Boolean = true,
-        @Query("timeout") timeout: Int = 20000,
-        @Query("dataType") dataType: String = "json",
-        @Query("sessionOption") sessionOption: String = "AutoLoginOnly",
-        @Query("x-i18n-language") language: String = "vi",
-        @Query("x-i18n-regionID") region: String = "VN",
-        @Query("isIcmsMtop") isIcmsMtop: Boolean = true,
-        @Query("data") data: String = "%7B%22appId%22%3A25718%2C%22params%22%3A%22%7B%5C%22appId%5C%22%3A25718%2C%5C%22isbackup%5C%22%3Atrue%2C%5C%22newTileEnable%5C%22%3Atrue%2C%5C%22language%5C%22%3A%5C%22vi%5C%22%2C%5C%22region_id%5C%22%3A%5C%22VN%5C%22%2C%5C%22platform%5C%22%3A%5C%22msite%5C%22%2C%5C%22scene%5C%22%3A%5C%22homepage%5C%22%2C%5C%22appVersion%5C%22%3A%5C%220.0.0%5C%22%2C%5C%22anonymous_id%5C%22%3A%5C%22M1%2BiHXBdsTgCAWgc3knquoSY%5C%22%2C%5C%22userId%5C%22%3A0%2C%5C%22pageNo%5C%22%3A0%7D%22%7D",
     ): Call<BaseResponse<LazadaListData>>
 
     @Headers(
