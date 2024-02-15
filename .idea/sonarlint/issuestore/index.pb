@@ -23,8 +23,6 @@ u
 Eapp/src/main/java/com/frank/demointer/models/shopee/ExperimentInfo.kt,4/6/46fcfaeeec7fa3626570eaad6c586d9b7affb9a4
 t
 Dapp/src/main/java/com/frank/demointer/models/shopee/DefaultFormat.kt,8/1/81b19b0f809f4cfbe8500a26c62fe314308723f0
-l
-<app/src/main/java/com/frank/demointer/models/shopee/Feeds.kt,0/5/05d1f82c015074d4f067e9f9d0d5b4e7dba507fe
 k
 ;app/src/main/java/com/frank/demointer/models/shopee/Data.kt,d/2/d2b1954d4e377f87903eee997b862f2722b3dc74
 q
@@ -35,10 +33,6 @@ r
 Bapp/src/main/java/com/frank/demointer/models/shopee/AdsItemCard.kt,2/f/2f9fd1f958419008b9feef1a4d2ed4360298592e
 h
 8app/src/main/java/com/frank/demointer/ui/MainActivity.kt,f/9/f9552f1c0e2a3dfb0aa611310ca67f193fa2fce2
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-o
-?app/src/main/java/com/frank/demointer/models/shopee/ItemCard.kt,f/7/f7d79f22dc0aa59aa1ce9d22ac528288c15a5937
 k
 ;app/src/main/java/com/frank/demointer/models/shopee/Item.kt,3/7/378a62cc2b1e9fcbd9ddaa18ff7aafb9e03afb3d
 u
@@ -49,8 +43,6 @@ u
 Eapp/src/main/java/com/frank/demointer/ui/shopee/PhotosSlideAdapter.kt,4/4/4401c990a84919f25d531f4beb4c073384d0071b
 h
 8app/src/main/java/com/frank/demointer/utils/Formatter.kt,a/c/acb03bb09000c6caccf26a6c91ba0f321d14b60b
-j
-:app/src/main/java/com/frank/demointer/models/shopee/Ads.kt,f/2/f2bad27ac3c7edb6c1aa1e0a9a5efbe66794097e
 n
 >app/src/main/java/com/frank/demointer/models/lazada/Module1.kt,4/0/4045911b3d5e7b9bed9433236d097e740872a770
 o

@@ -65,10 +65,15 @@ class LazadaListActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val spr = response.body()
                     // Success
-                    Log.d("FrankAA", "Call api success size: ${spr?.data}")
-                    val items = spr?.data?.resultValue?.icmsZebra?.data
-                    if (!items.isNullOrEmpty()) {
-                        lazadaApdater.setData(items)
+                    Log.d("FrankAA", "Call api success size: ${spr}")
+                    spr?.data?.result?.let {
+                        if (it.isNotEmpty()) {
+                            val result = it[0]
+                            val items = result.twoFive?.data
+                            if (!items.isNullOrEmpty()) {
+                                lazadaApdater.setData(items)
+                            }
+                        }
                     }
                 } else {
                     // Error

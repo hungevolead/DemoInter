@@ -2,14 +2,16 @@ package com.frank.demointer.network
 
 import com.frank.demointer.models.BaseResponse
 import com.frank.demointer.models.lazada.LazadaData
-import com.frank.demointer.models.lazada.Products
 import com.frank.demointer.models.lazada_list.LazadaListData
+import com.frank.demointer.models.lazada_list.Result
 import com.frank.demointer.models.shopee.Data
+import okhttp3.Response
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
-import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 interface ApiService {
 
@@ -38,6 +40,16 @@ interface ApiService {
         @Query("offset") offset: Int = 0,
         @Query("view_session_id") viewSessionId: String = "2051404c-b801-408a-9446-1f89874593b9",
     ): Call<BaseResponse<Data>>
+
+
+    @Headers(
+        "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+    )
+    @GET("")
+    fun getListTikTok(
+        @Url url: String = "https://api.tiktokv.com/aweme/v1/challenge/aweme/?ch_id=1666225759256578&count=20&offset=0&max_cursor=0&type=5&query_type=0&is_cold_start=1&pull_type=1&cursor=0",
+    ): Call<ResponseBody>
 }
 
 interface ApiLazadaService {
@@ -47,7 +59,7 @@ interface ApiLazadaService {
         "accept: application/json",
         "accept-language: vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
         "content-type: application/x-www-form-urlencoded",
-        "cookie: t_fv=1696297265756; t_uid=WM0KqM1JXym7I4gWj4sgXJ9wKVFpz94V; cna=M1+iHXBdsTgCAWgc3knquoSY; hng=VN|vi|VND|704; hng.sig=EmlYr96z9MQGc5b9Jyf9txw1yLZDt_q0EWkckef954s; lwrid=AQGNqMlDbzcMV7vbafn6xe5uI%2FYQ; lzd_cid=2846c94f-7cea-449d-da9e-5e8e3dea4e7b; _gcl_au=1.1.107585883.1707933785; xlly_s=1; epssw=1*gaC_11M6O5HGG_GSIAS3N5ILZ2FfILMs72YdIgzzNbg8p18E2c7LuODNtPw_AHdWHhxGV9ZnFF2xNKBlufM7dtSRMQ9vdt7YFy2cd1XOLbAkNpcOF1BR6T10acjM8FLlMr3BXeGSoK-MSotr18Z3xBfuaUQhXNy83y03ygxN1HqFdLHCeSOUwkq0eMmnxkm3xlk4et2R3kmndQz5VsAXqefLMXc3AUJBe4_5dLnnxJO.; isg=BNraaeCcaxgb9udiZfA_OfmIK4b8C17l_H9yiuRS5W04V3mRzJvz9UvuIjtLz9Z9; tfstk=eqKJz_1FExe-nMPNo03DYRFp24Hce3py3QJ_x6fuRIdvCdPlRB0rRMdw9waHKg9CRIO_r3fhZIQpGsE5Pb-hvDCDLzDyF6jpvsANZLv5twZdiCQlPB0P99symUqhZbSpdCjKsfmijLJP4MGisI5glBIe2xLa3cvyU-NbMjAqjkKNPgI0vDE0Vbq1GhXS5mgk1rI7wc_P1L1JtBxbPazyhsBRFn9h_197lkZBDTQR4MKMX4Aas1B3PxHY8y753wUGkZxk80NFH1DDNyzFkPWAsx3z8y753tCin5UU8ZUN.; t_sid=UQkuE6sKQ61G73cH4LCxW2BWW4T5bUOE; utm_channel=NA; lzd_sid=145c375776ec2a2de64a05e93ddfed8c; _m_h5_tk=73bdc7b5bb9b7b2fb4340c910f12dfe0_1707969597650; _m_h5_tk_enc=c3c79748ce297fd5255a7fc29de2fd66; _tb_token_=5a06be6e0eb4e; _m_h5_tk=ec33178568873e4b755f12f48c25b30a_1707973153436; _m_h5_tk_enc=a390a7b33fec9830b9bc6e1f83f518b2; lzd_sid=1c718a85be3e0ee4e48bca5baded3d81",
+        "cookie: t_fv=1696297265756; t_uid=WM0KqM1JXym7I4gWj4sgXJ9wKVFpz94V; cna=M1+iHXBdsTgCAWgc3knquoSY; hng=VN|vi|VND|704; hng.sig=EmlYr96z9MQGc5b9Jyf9txw1yLZDt_q0EWkckef954s; lwrid=AQGNqMlDbzcMV7vbafn6xe5uI%2FYQ; lzd_cid=2846c94f-7cea-449d-da9e-5e8e3dea4e7b; _gcl_au=1.1.107585883.1707933785; xlly_s=1; lzd_sid=145c375776ec2a2de64a05e93ddfed8c; _tb_token_=5a06be6e0eb4e; _m_h5_tk=aee13d1e6a6ac7fe81a5485665600c99_1707977949016; _m_h5_tk_enc=952e7887bc221782ccfddaa817951b66; t_sid=KyXA6bE0TUJzeelWab3E5B3zJJyyzAP6; utm_channel=NA; x5sec=7b22617365727665722d6c617a6164613b33223a22617c434d712f74713447454e66546b6148362f2f2f2f2f77456943584a6c5932467764474e6f595444367a7275692f662f2f2f2f3842536a41774d5441775a6d59774d4441774d4441774d4441774f4441774d4441774d4451324f44466a5a6d5530595467334f4751324f4755774d4441774d4441774d44413d222c22733b32223a2230306539376431323930316530376234227d; epssw=1*GhAO11iC4fpjtdDMIAS3NJtnZ2Ua7RkM7yFiusduyAXPNAPdP_COF962NKCQQv62jhA9AJax1L_VGIjtjhjMjpB2jiSFYQ_DGEfQ10oS6yng6Tsi5HkmdPeROfPRxjTk68mneKkBev9RyUpR3kmndLeCbaQRFtz4ywgQBFkxzJAuN6dy1CuzaLHRnJ9-xDmnxf..; isg=BJ2dqEOQpPHqMEALviHAQAKJrH-XutEMXGNdAF9i2fQjFr1IJwrh3GuERBQQzenE; tfstk=eH2BpYvkTzeaxPOH5wsafPUT4QH5uy6qV3i8mupe2vHpyUEx7YSHa6mSFVZqa2e7qLi82zjnzMfaxkDoeZ74Ftr3xqfDvmX4WchPTYQVuOW4xkDoeWlG1oITrROETqtf3h4G_0hIkk6BeLw63XgYvV9-jRiCrqEK5Lp54cpqlthJNQ0pFcgVfGOkZ1jzGKRYMzmi9cmG5Gs6amhKjcgVfGOkZXnijNs1fQoA.",
         "origin: https://www.lazada.vn",
         "referer: https://www.lazada.vn/",
         "sec-ch-ua: \"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",
@@ -58,8 +70,9 @@ interface ApiLazadaService {
         "sec-fetch-site: same-site",
         "user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko)",
     )
-    @GET("https://acs-m.lazada.vn/h5/mtop.lazada.homepage.service/1.0/?jsv=2.7.2&appKey=24677475&t=1707962404365&sign=901239d341436b941ea279d4df7b15ed&api=mtop.lazada.homepage.service&v=1.0&type=originaljson&isSec=1&AntiCreep=true&timeout=20000&dataType=json&sessionOption=AutoLoginOnly&x-i18n-language=vi&x-i18n-regionID=VN&isIcmsMtop=true&data=%7B%22regionID%22%3A%22VN%22%2C%22language%22%3A%22vi%22%2C%22platform%22%3A%22pc%22%2C%22isbackup%22%3A%22true%22%2C%22voyagerVersion%22%3A%222%22%2C%22terminalType%22%3A1%2C%22backupParams%22%3A%22language%2CregionID%2Cplatform%2CpageNo%22%2C%22anonUID%22%3A%22WM0KqM1JXym7I4gWj4sgXJ9wKVFpz94V%22%2C%22pageNo%22%3A0%2C%22appId%22%3A%22icms-zebra-5000357-2586207%22%7D")
+    @GET("")
     fun getListLazada(
+        @Url url: String = "https://acs-m.lazada.vn/h5/mtop.relationrecommend.lazadarecommend.recommend/1.0/?jsv=2.7.2&appKey=24677475&t=1707975086194&sign=0c9f28ba95817ec88ac4db0bd58e652a&api=mtop.relationrecommend.LazadaRecommend.recommend&v=1.0&type=originaljson&isSec=1&AntiCreep=true&timeout=20000&dataType=json&sessionOption=AutoLoginOnly&x-i18n-language=vi&x-i18n-regionID=VN&data=%7B%22appId%22%3A25718%2C%22params%22%3A%22%7B%5C%22appId%5C%22%3A25718%2C%5C%22isbackup%5C%22%3Atrue%2C%5C%22newTileEnable%5C%22%3Atrue%2C%5C%22language%5C%22%3A%5C%22vi%5C%22%2C%5C%22region_id%5C%22%3A%5C%22VN%5C%22%2C%5C%22platform%5C%22%3A%5C%22msite%5C%22%2C%5C%22scene%5C%22%3A%5C%22homepage%5C%22%2C%5C%22appVersion%5C%22%3A%5C%220.0.0%5C%22%2C%5C%22anonymous_id%5C%22%3A%5C%22M1%2BiHXBdsTgCAWgc3knquoSY%5C%22%2C%5C%22userId%5C%22%3A0%2C%5C%22pageNo%5C%22%3A0%7D%22%7D"
     ): Call<BaseResponse<LazadaListData>>
 
     @Headers(
@@ -67,7 +80,7 @@ interface ApiLazadaService {
         "Accept-Encoding: gzip, deflate, br",
         "Accept-Language: en-US,en;q=0.9,vi;q=0.8",
         "Content-Type: application/x-www-form-urlencoded",
-        "Cookie: t_fv=1707213594151; t_uid=otvGP3BLzlkSGG1OcapQnNArxML4lE1N; hng=VN|en|VND|704; cna=GvFIHsyZ8RMCASp3Aq4f+ifN; lzd_cid=02293629-a890-47ca-a66d-efffef44bbef; lzd_sid=110f64cc6c942ad50b4311d4dcc0f9b7; _tb_token_=ba0e33f5797e; xlly_s=1; lwrid=AQGNfeNSuBKXL7OMffyAxe5uI%2FYQ; XSRF-TOKEN=21be23a8-d30b-4d19-88f3-14a14b03ca4e; t_sid=hUeOSY2eMsgifdGklnRDpify5LBtxgxk; utm_channel=NA; _m_h5_tk=7037daf3b34c5e619b53e9fcf6f3e641_1707295578633; _m_h5_tk_enc=e0887e5e2cbe1d7ecb3addf9f150fef8; tfstk=eTmkzTTACS1sq_SsHbEWDHhStCLYF_ZIYXIL9kFeuSPfw_I-LpqnEXmpFvyK-jDIp7nLeQwUTSkZ9adSUk03Mj08wYoLxJPxOXF-UYIntSH8wYHyNk2UMfG3RLNLTWcKL4pvXhHSFkZEtCK9X0et-5ATnGwWsYZQYIdvNW4sFfIIYFjh2w7TtwnXEPFGIIt6c0Yak5kzgXhK08fT_YPcYMPuEz4xUSjFYmjyyZ7Z_dSQ3pnVRwazh-V9-XDC7jViievDnNT7z-wJ6KvcRTUzh8q2nKbNDzybHv5..; isg=BBAQyh4qQVDiMx1VviOPiYhK4Vhi2fQjOk3oJArh3Gs-RbDvsunEs2b3HRWllaz7; epssw=1*iEV611Gg21pxtQGSIASGt1ITh2U4urzauzFR-onjp2UV7lGLP_h6F1B5NKCcmlxMdtR9P9zpfhOJ0XLo6T_2uGxMbhR9RApV6UR2bxaF9qez825C7EIpf-DQU-PpH_QR-1IAe-zyzMmndDpJ3kmnetyR3DqddLHpeDmnxDDv4Ey9KQ4uz38QfZKhxMmEdLHBeYB4",
+        "Cookie: t_fv=1696297265756; t_uid=WM0KqM1JXym7I4gWj4sgXJ9wKVFpz94V; cna=M1+iHXBdsTgCAWgc3knquoSY; hng=VN|vi|VND|704; hng.sig=EmlYr96z9MQGc5b9Jyf9txw1yLZDt_q0EWkckef954s; lwrid=AQGNqMlDbzcMV7vbafn6xe5uI%2FYQ; lzd_cid=2846c94f-7cea-449d-da9e-5e8e3dea4e7b; _gcl_au=1.1.107585883.1707933785; xlly_s=1; lzd_sid=145c375776ec2a2de64a05e93ddfed8c; _tb_token_=5a06be6e0eb4e; _m_h5_tk=aee13d1e6a6ac7fe81a5485665600c99_1707977949016; _m_h5_tk_enc=952e7887bc221782ccfddaa817951b66; t_sid=KyXA6bE0TUJzeelWab3E5B3zJJyyzAP6; utm_channel=NA; x5sec=7b22617365727665722d6c617a6164613b33223a22617c434d656874713447454f4f63785a66392f2f2f2f2f77456943584a6c5932467764474e6f595444367a7275692f662f2f2f2f3842536a41774d5441775a6d59774d4441774d4441774d4441774f4441774d4441774d4451324f44466a5a6d5530596a67334f4751324f4755774d4441774d4441774d44413d222c22733b32223a2231663262366337333134633337383133227d; epssw=1*MCdO11gVG5LxtQGS7zeuOJtnK4FSNqzauzFRMK14PaePNcGdlbBC3CB5dtRiG9626T15X5UupK8VGF34dtSMjh-wNO693Gf90gvTTuoSH2rg6a-ivhwmdoHy9gORxjTFTYmnxk2R38B2xkDR38B4xD4J_8B4Ftz4ywgQ8J2xzzSWvUnyRl_vxMXRnJ9-dLHBef..; tfstk=eEbBpL0oYTQNtOinCJNN1OpFRQL739a2NbORi_3EweLKeYCvQUPn4kAWPd124pQ5Z4ORwTVHUWqNt6Yky-yVPr5hteVpH_4VBCKzYUe43PzVt6YkyM-MGuSt9NieYKGbu0AG_QtBH6aIy4_suH9A9dgJsNOQEKCpC4354l32hrK-V0vKPC9415ioqlVPcqoADTAMvCAgC5Ns4IKpsC9415ioqHdMsRN_10RA.; isg=BJubrvfXeu8PNobNDDvurjDTKvkFcK9yLgkbxo3YdxqxbLtOFUA_wrnuAtJi1wdq",
         "Origin: https://www.lazada.vn",
         "Referer: https://www.lazada.vn/",
         "Sec-Ch-Ua: \"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",

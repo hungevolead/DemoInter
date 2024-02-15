@@ -27,6 +27,7 @@
         <activity android:name=".ui.shopee.ShopeeListActivity"/>
         <activity android:name=".ui.tiktok.TiktokListActivity"/>
         <activity android:name=".ui.shopee.ShopeeDetailActivity"/>
+        <activity android:name=".ui.tiktok.TikTokDetailActivity"/>
     </application>
 
 </manifest>
