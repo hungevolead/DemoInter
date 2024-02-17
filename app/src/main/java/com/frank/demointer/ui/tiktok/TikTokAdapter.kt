@@ -44,7 +44,7 @@ class TikTokAdapter(private var listTikTok: MutableList<ItemTikTok>) :
             binding.tvTitle.text = itemTikTok.title
             Glide.with(context).load(itemTikTok.image).into(binding.imvVideo)
 
-            binding.btnAmountPayment.setOnClickListener {
+            binding.cvItemTT.setOnClickListener {
                 //listener?.onClickWatchVideo(itemTikTok, position)
                 TikTokDetailActivity.startActivity(context, itemTikTok)
             }
