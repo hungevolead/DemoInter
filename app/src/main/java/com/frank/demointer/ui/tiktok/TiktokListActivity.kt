@@ -69,7 +69,7 @@ class TiktokListActivity : AppCompatActivity() {
                 )
                 .build()
             val response: Response = client.newCall(request).execute()
-            val body = response.body?.string()
+            val body = response.body()?.string()
             Log.d("FrankAA", "Call api success body: ${body}")
             if (body.isNullOrEmpty()) {
                 return@Thread
